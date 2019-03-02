@@ -99,7 +99,10 @@
 		         ga('send', 'pageview');
 	</script>
 	
-	<!-- Freshchat script -->
+	
+	
+	
+	<!-- Freshchat script 
 	<script src="https://wchat.freshchat.com/js/widget.js"></script>
 	<!-- /Freshchat script -->
 </head>
@@ -198,7 +201,39 @@
 	});
 	</script>
 	
-	<!-- Freshchat script -->
+	
+	
+	
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  xfbml            : true,
+		  version          : 'v3.2'
+		});
+	  };
+
+	  (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat"
+	  attribution=setup_tool
+	  page_id="1842183029185454"
+	  logged_in_greeting="Hey there! How can I help you?"
+	  logged_out_greeting="Hey there! How can I help you?">
+	</div>
+	
+	
+	
+	
+	<!-- Freshchat script
 	<script>
 	  window.fcWidget.init({
 		token: "b95cb0f3-d02a-4a45-91ab-872b09199405",
