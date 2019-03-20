@@ -127,7 +127,24 @@ header a{
 .home-intro-content h1{
 	color: #fff;
 	font-size: 52px;
+	margin-bottom: 10px;
 }
+.home-cta{
+	margin-top: 60px;
+}
+.home-cta a{
+	text-decoration: none;
+	color: #444;
+	font-size: 20px;
+}
+.sm-home-cta{
+	background: #fff;
+	padding: 20px 40px;
+	border-radius: 3px;
+	box-shadow: 0px 4px 20px #1e1e1e5c;
+}
+
+
 @media only screen and (max-width: 479px){
 	.home-intro-content h1{
 		font-size: 40px;
@@ -168,8 +185,8 @@ header a{
 .home-works .home-works-title{
 	color: #444;
 	font-weight: 700;
-	padding-left: 10px;
-	border-left: 8px solid #0077d7;
+    padding-left: 15px;
+    border-left: 3px solid #0077d7;
 	margin-bottom: 15px;
 }
 .home-works-row {
@@ -248,12 +265,12 @@ header a{
 }
 .behance-profile a{
 	background-color: #1769ff;
-	border-radius: 50px;
+	border-radius: 3px;
 	display: inline-block;
 	margin: 0 auto;
 	vertical-align: center;
 	color: #fff;
-	box-shadow: 1px 1px 10px 1px #ddd;
+	box-shadow: 0px 4px 20px #1e1e1e5c;
 	transition: background-color 0.4s;
 }
 .behance-profile a:hover{
@@ -269,7 +286,7 @@ header a{
 
 .dribbble-profile{
 	text-align: center;
-	padding: 40px 10px 0px 10px;
+	padding: 30px 10px 0px 10px;
 	display: inline-block;
 }
 .dribbble-profile img{
@@ -278,12 +295,12 @@ header a{
 }
 .dribbble-profile a{
 	background-color: #ea4c89;
-	border-radius: 50px;
+	border-radius: 3px;
 	display: inline-block;
 	margin: 0 auto;
 	vertical-align: center;
 	color: #fff;
-	box-shadow: 1px 1px 10px 1px #ddd;
+	box-shadow: 0px 4px 20px #1e1e1e5c;
 	transition: background-color 0.4s;
 }
 .dribbble-profile a:hover{
@@ -310,7 +327,7 @@ header a{
 
 /***7. footer***/
 footer{
-	padding: 40px 0px;
+	padding: 80px 0px 150px;
 	background-color: #0077d7;
 }
 footer a{
