@@ -1,4 +1,5 @@
 /*
+Updated on March 22, 2019
 
 1. css reset
 2. container
@@ -99,16 +100,18 @@ header a{
 	text-decoration: none;
 	color: #fff;
 	border: 1px solid #fff;
-	border-radius: 50px;
-	padding: 8px 15px;
+	border-radius: 3px;
+	padding: 10px 25px;
 	transition: background-color 0.4s;
-	transition: color 0.4s;
+	transition: color 0.6s;
 }
 .header-menu .header-menu_email:hover{
 	color: #666;
 	border: 1px solid #fff;
 	background-color: #fff;
 	opacity: 1;
+	box-shadow: 0px 1px 10px #666;
+	transition: all 0.6s;
 }
 
 /***4. home page***/
@@ -128,6 +131,7 @@ header a{
 	color: #fff;
 	font-size: 52px;
 	margin-bottom: 10px;
+	line-height: 1.4;
 }
 .home-cta{
 	margin-top: 60px;
@@ -141,9 +145,14 @@ header a{
 	background: #fff;
 	padding: 20px 40px;
 	border-radius: 3px;
+	box-shadow: 0px 1px 10px #1e1e1e5c;
+}
+.sm-home-cta:hover{
+	background: #fff;
+	padding: 20px 40px;
+	border-radius: 3px;
 	box-shadow: 0px 4px 20px #1e1e1e5c;
 }
-
 
 @media only screen and (max-width: 479px){
 	.home-intro-content h1{
@@ -185,13 +194,12 @@ header a{
 .home-works .home-works-title{
 	color: #444;
 	font-weight: 700;
-    padding-left: 15px;
-    border-left: 3px solid #0077d7;
 	margin-bottom: 15px;
 }
 .home-works-row {
 	width: 100%;
 	transition: all 0.4s;
+	margin-bottom: 30px;
 }
 .home-works-row a{
 	text-decoration: none;
@@ -315,6 +323,23 @@ header a{
 }
 
 
+/*email CTA*/
+.sm-email-cta{
+	margin: 30px 20px 150px;
+	text-align: center;
+	font-size: 52px;
+}
+@media only screen and (max-width: 479px){
+.sm-email-cta {
+    font-size: 32px;
+}
+}
+
+.sm-email-cta-p{
+	color: #fff;
+	font-size: 16px;
+	margin: 0px 20px
+}
 
 /*6. hover to reduce other child opacity*/
 .home-works-row:hover .home-works__item {
@@ -327,8 +352,9 @@ header a{
 
 /***7. footer***/
 footer{
-	padding: 80px 0px 150px;
+	padding: 140px 0px 300px;
 	background-color: #0077d7;
+	text-align: center;
 }
 footer a{
 	display: inline;
@@ -356,7 +382,7 @@ footer .footer-menu li a{
 	display: inline;
 	color: #fff;
 }
-.social-links{ display:inline; float:right;}
+.social-links{ display:block; margin-bottom: 20px;}
 svg{fill:#fff; padding:0px 10px;}
 svg:last-of-child{padding-right:0;}
 svg:hover{opacity: 0.8; transition: 0.5s ease;}
