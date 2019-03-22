@@ -154,9 +154,14 @@ header a{
 	box-shadow: 0px 4px 20px #1e1e1e5c;
 }
 
+@media only screen and (max-width: 755px){
+	.hide-mobile{
+		display: none;
+	}
+}
 @media only screen and (max-width: 479px){
 	.home-intro-content h1{
-		font-size: 40px;
+		font-size: 32px;
 		line-height: 1.2;
 	}
 }
