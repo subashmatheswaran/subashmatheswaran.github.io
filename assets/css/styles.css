@@ -1,5 +1,5 @@
 /*
-Updated on March 22, 2019
+Updated on Dec 03, 2019
 
 1. css reset
 2. container
@@ -132,14 +132,16 @@ header a{
 	font-size: 52px;
 	margin-bottom: 10px;
 	line-height: 1.4;
+	font-weight: 700;
 }
 .home-cta{
 	margin-top: 60px;
 }
 .home-cta a{
 	text-decoration: none;
-	color: #444;
+	color: #333;
 	font-size: 20px;
+	font-weight: 700;
 }
 .sm-home-cta{
 	background: #fff;
@@ -189,7 +191,7 @@ header a{
 /***5. home works***/
 .home-works{
 	padding: 120px 0px;
-	background-color: #f5f5f5;
+	background-color: #eef3f8;
 }
 @media only screen and (max-width: 479px){
 	.home-works{
@@ -197,8 +199,9 @@ header a{
 	}
 }
 .home-works .home-works-title{
-	color: #444;
-	font-weight: 700;
+	color: #333;
+	font-size: 32px;
+	font-weight: bold;
 	margin-bottom: 15px;
 }
 .home-works-row {
@@ -254,11 +257,11 @@ header a{
 	width: 100%;
 }
 .home-works__item h3{
-	color: #444;
+	color: #333;
 	font-weight: 700;
 }
 .home-works__item p{
-	color: #888;
+	color: #666;
 }
 
 
@@ -338,21 +341,23 @@ header a{
 .sm-email-cta {
     font-size: 32px;
 }
+.design-profiles{
+	padding-top: 0px;
+	padding-bottom: 30px;
+}
 }
 
 .sm-email-cta-p{
 	color: #fff;
 	font-size: 16px;
+	font-size: 22px;
 	margin: 0px 20px
 }
 
-/*6. hover to reduce other child opacity*/
-.home-works-row:hover .home-works__item {
-    opacity: 0.8;
-}
+/*6. hover opacity*/
 .home-works-row .home-works__item:hover {
     opacity: 1;
-	box-shadow: 2px 2px 10px 5px #ddd;
+	box-shadow: 0px 3px 15px 7px #ccc;
 }
 
 /***7. footer***/
@@ -365,6 +370,7 @@ footer a{
 	display: inline;
 	color: #fff;
 	text-decoration: none;
+	font-weight: 700;
 }
 footer .footer-menu{
 	color: #fff;
