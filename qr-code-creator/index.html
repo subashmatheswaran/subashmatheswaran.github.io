@@ -1,0 +1,37 @@
+<!doctype html>
+	<head>
+		<title>QR Code Creator</title>
+        <link rel="stylesheet" href="master/css/styles.css">
+        <meta name="theme-color" content="#5b21ce">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+        <section class="qr-master-section">
+            <h1 class="qr-title">QR Code Creator</h1>
+            <div><input id="qr-text" type="text" placeholder="Enter content to create QR code"/></div>
+            <br/>
+            <div>
+                <button class="qr-btn" onclick="generateQRCode()">Create QR Code</button>
+            </div>
+            <br><br>
+            <div>
+                <p id="qr-result">This is a default QR code:</p>
+                <canvas id="qr-code"></canvas>
+            </div>
+            
+            <br>
+            <div>
+                <a id="download" download="qr-code.png">
+                    <button class="qr-btn" type="button" onClick="download()">Download as Image</button>
+                </a>
+            </div>
+        </section>
+
+        <script src="master/js/qr-script.min.js"></script>
+		<script src="master/js/script.js"></script>
+        
+	</body>
+</html>
+
+
