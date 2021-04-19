@@ -1,5 +1,5 @@
 /*
-Updated on Dec 03, 2019
+Updated on April 18, 2021
 
 1. css reset
 2. container
@@ -23,6 +23,10 @@ h1, h2, h3, h4, h5, h6, p{
 	padding:0;
 	margin:0;
 	font-weight: 400;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 /***2. container***/
