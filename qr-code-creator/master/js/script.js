@@ -10,11 +10,11 @@ var qr;
 
 function generateQRCode() {
     var qrtext = document.getElementById("qr-text").value;
-    document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
+    document.getElementById("qr-result").innerHTML = "QR code generated for your input" +":";
     
     qr.set({
         foreground: '#5b21ce',
-        size: 200,
+        size: 300,
         value: qrtext
     });
 }

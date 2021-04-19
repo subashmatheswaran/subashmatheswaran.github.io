@@ -14,19 +14,18 @@ body {
     font-weight: 700;
 }
 
-input {
+textarea {
     padding:5px 12px;
     background-color:#efefef;
     border:none;
     border:1px solid #fff;
     border-radius: 4px;
     width:250px;
-    height:32px;
     font-size:16px;
     box-shadow: 0px 4px 8px 1px #5b21ce00;
 }
 
-input:focus{
+textarea:focus{
     border:1px solid #5b21ce;
     background-color: #ffffff;
     outline: none;
