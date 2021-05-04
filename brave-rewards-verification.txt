@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: subashmatheswaran.github.io
+Token: 7b9fcdafe72e6553ed7169f4be9ffaaa33239d3f3112dee7bcc3b097ad2535a6
