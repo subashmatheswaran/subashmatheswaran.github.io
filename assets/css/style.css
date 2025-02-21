@@ -1,0 +1,568 @@
+/* CSS Reset
+
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: "Humans-Font-01-Regular";
+    cursor: url('../img/cursor.png'), auto;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+    font-family: "Humans-Font-01-Regular";
+    src: url("../font/Humans-Font-01-Regular.ttf");
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #ffffff;
+    background: #111111;
+  }
+  
+  ::selection {
+    color: #ffffff;
+    background: #111111;
+  }
+
+
+
+
+
+  /* scroll bar customization */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #111111; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #111111; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* navbar */
+#navbar {
+    padding: 15px 0px;
+    position: fixed;
+    max-width: 1000px;
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.nav-content {
+    width: 1000px;
+    background-color: #111111;
+    
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: right;
+}
+
+.nav-content .logo{
+    text-decoration: none;
+    max-height: 44px;
+    padding: 15px;
+}
+
+.logo img{
+    max-width: 44px;
+    max-height: 44px;
+    border-radius: 10px;
+}
+
+/* Hide checkbox */
+#nav-toggle {
+    display: none;
+}
+
+/* Hamburger menu styles */
+.nav-toggle-label {
+    display: none; /* Hidden by default for desktop */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for hamburger lines */
+.hamburger-lines {
+    position: relative;
+    width: 25px;
+    height: 20px;
+}
+
+.hamburger-lines span,
+.hamburger-lines span::before,
+.hamburger-lines span::after {
+    display: block;
+    background: #000000;
+    height: 2px;
+    width: 25px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-lines span {
+    top: 9px;
+}
+
+.hamburger-lines span::before {
+    content: '';
+    top: -8px;
+}
+
+.hamburger-lines span::after {
+    content: '';
+    top: 8px;
+}
+
+/* Hamburger animation */
+#nav-toggle:checked + .nav-toggle-label .hamburger-lines span {
+    background: transparent;
+}
+
+#nav-toggle:checked + .nav-toggle-label .hamburger-lines span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#nav-toggle:checked + .nav-toggle-label .hamburger-lines span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #111111;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0px 5px;
+    font-size: 24px;
+    transition: all 0.6s;
+}
+
+.nav-links .active-menu:hover{
+    color: #111111;
+    background-color: #ffffff;
+}
+
+
+.nav-links .active-menu{
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    transition: all 0.6s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: flex; /* Show only on mobile */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+        
+        /* Initial state */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out,
+                    padding 0.5s ease-in-out;
+    }
+
+    
+.nav-links a {
+    margin-left: 0px;
+    font-size: 24px;
+}
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease, 
+                    transform 0.5s ease;
+    }
+
+    /* Show menu when checkbox is checked */
+    #nav-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        padding: 1rem;
+    }
+
+    /* Animate list items when menu opens */
+    #nav-toggle:checked ~ .nav-links li {
+        opacity: 1;
+        transform: translateY(0);
+        padding:30px;
+    }
+
+    /* Stagger the animation for each list item */
+    .nav-links li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links li:nth-child(4) { transition-delay: 0.4s; }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* HERO content */
+.hero-section{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.hero-text{
+    font-size: 100px;
+    margin-top: 50px;
+}
+
+.hero-p{
+    font-size: 40px;
+    margin-bottom: 70px;
+}
+
+.hero-image{
+    max-width: 280px;
+    max-height: 337px;   
+    position:absolute;
+    left:0;
+    right:0;
+    margin: 0px auto;
+}
+
+.hero-snippets{
+    max-width: 780px;
+    margin-bottom: 30px;
+    position:relative;
+    visibility: hidden;
+    pointer-events:none;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.hero-image:hover ~ .hero-snippets{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.6s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-space{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+
+
+/*WORKS*/
+.works{
+    clear: both;
+}
+
+.works h2{
+    font-size: 70px;
+    text-align: center;
+    color:  #111111;
+}
+
+.work-card{
+    clear: both;
+    padding-top: 100px;
+    height: 218px;
+}
+
+.work-card-image{
+    float: left;
+    border-radius: 20px;
+    margin-right: 60px;
+    max-width: 300px;
+    border: 1px solid #999999;
+    filter: grayscale(100%);
+    transition: all 0.6s;
+}
+
+.work-card-image:hover{
+    filter: grayscale(0%);
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+.work-card .card-content{
+    float: none;
+}
+
+.work-card .card-content h3{
+    font-size: 40px;
+    color:  #111111;
+}
+
+.work-card .card-content ul{
+    margin-top:12px;
+}
+
+.work-card .card-content ul li{
+    padding: 4px 15px;
+    margin-right: 10px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid #111111;
+    border-radius: 30px;
+    font-size: 20px;
+    margin: 0;
+    display: inline-block;
+    color:  #111111;
+}
+
+.cta-card-button{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: #111111;
+    border: 2px solid #111111;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    -webkit-box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
+    -moz-box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
+    box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
+    transition: all 0.6s;
+}
+
+.cta-card-button:hover {
+    background-color: #111111;
+    color: #ffffff;
+    transition: all 0.6s;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home-lab{
+
+}
+
+.home-lab h2{
+    font-size: 70px;
+    color: #111111;
+    float: left;
+    padding-bottom: 50px;
+}
+
+.home-lab a{
+    float: right;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.home-lab img{
+    max-width: 300px;
+    border-radius: 20px;
+    border: 1px solid #999999;
+}
+
+.home-lab .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home-lab .card-row .card img{
+    transition: all 0.6s;
+    transform: scale(1.0);
+}
+
+.home-lab .card-row .card img:hover {
+    transition: all 0.6s;
+    transform: scale(1.1);
+}
+
+.home-lab h3{
+    font-size: 40px;
+    padding-top: 25px;
+    word-wrap: break-word;
+    max-width: 300px;
+}
+
+
+
+
+
+
+.cta-email{
+    clear: both;
+    text-align: center;
+}
+
+.cta-email h2{
+    font-size: 70px;
+    text-align: center;
+    color:  #111111;
+}
+
+.cta-email h3{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+
+
+
+
+.footer{
+    clear: both;
+    text-align: center;
+}
+
+.footer p{
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+
+
+
+
