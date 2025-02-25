@@ -106,16 +106,13 @@ footer{
 }
 
 
-
 .nav-logo img{
 	margin: 20px 0px 20px 0px;
-	max-width: 250px;
 }
 
 @media only screen and (max-width: 600px)  {
 	.nav-logo img{
 		margin: 0px 0px 20px 0px;
-		max-width: 150px;
 	}	
 }
 
