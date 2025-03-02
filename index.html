@@ -63,14 +63,14 @@ Welcome to the place where alphabets, numbers and special characters are mixed t
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="/assets/img/preview-image-subash-matheswaran.png">
     <meta name="twitter:url" content="/index.html">
-    <meta name="twitter:title" content="Subash - Product Designer, India.">
-    <meta name="twitter:image" content="/assets/img/preview-image-subash-matheswaran.png">
+    <meta name="twitter:title" content="Subash - Software Designer, India.">
+    <meta name="twitter:image" content="/assets/img/bento-grid-subash.jpg">
     <link rel="icon" type="image/png" href="assets/img/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/apple-touch-icon.png" />
     <link rel="mask-icon" href="/assets/img/android-chrome-512x512.png" color="#111111" />
     <link rel="canonical" href="www.subashmatheswaran.github.io">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
     
   </head>
   <body>
@@ -184,58 +184,10 @@ Welcome to the place where alphabets, numbers and special characters are mixed t
         </footer>
         
 
-
         <section class="section-space"></section>
 
 
-
-
-
-
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="assets/js/script.js" type="text/javascript"></script>
-    <script>
-        $(document).ready(function(){
-        var oldTitle = $(document).find("title").text();
-        var newTitle = "You're Awesome...";
-    
-        function setTitle(title){
-          document.title = title;
-        }
-    
-        $(window).on("focus", function(){
-        setTitle(oldTitle);
-        }).on("blur", function(){
-        setTitle(newTitle);
-        });
-        });
-    
-    
-    
-        // smooth scroll mouse wheel
-        document.addEventListener('wheel',function (event){
-        //only vertical scroll
-        if (event.deltaY > 0)
-        {
-            event.preventDefault();
-            smoothScroll(document.documentElement,5,1000)
-        }
-        })
-        function smoothScroll (domElement,pixel,delay)
-        {
-        const intervalToRepeat = 5;
-        const step = (intervalToRepeat * pixel) / delay;
-        if ( step < pixel)
-        {
-            domElement.scrollTop += step;
-            setTimeout(function (){
-            smoothScroll(domElement,pixel - step,delay)
-            },intervalToRepeat);
-        }
-        }
-    
-        </script>
         
   </body>
 </html>
