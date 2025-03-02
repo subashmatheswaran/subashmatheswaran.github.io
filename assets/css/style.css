@@ -105,6 +105,16 @@ table {
     margin: 0 auto;
 }
 
+@media (max-width: 1000px) {
+    .container{
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0px 20px;
+    }
+
+}
+
+
 /* navbar */
 #navbar {
     padding: 15px 0px;
@@ -331,11 +341,20 @@ table {
 
 .hero-image{
     max-width: 1000px;
+    width: 100%;
     left:0;
     right:0;
     margin: 0px auto;
 }
 
+@media (max-width: 768px) {
+    .hero-image{
+        width: 100%;
+        left:0;
+        right:0;
+        margin: 0px auto;
+    }
+}
 
 .hero-image:hover ~ .hero-snippets{
     visibility: visible;
