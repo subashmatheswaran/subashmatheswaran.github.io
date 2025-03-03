@@ -115,17 +115,181 @@ table {
 }
 
 
-/* navbar */
+
+
+
+
+
+
+
+
+  
+  a {
+    color: #000;
+  }
+  
+  
+  /* header */
+  .header {
+    background-color: #fff;
+    box-shadow: 0px -1px 2px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    max-width: 1000px;
+    z-index: 99;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+  
+
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    padding: 0px;
+    text-decoration: none;
+  }
+  
+  /* menu */
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  
+  @media (min-width: 768px) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 17px 20px;
+      font-size: 16px;
+    }
+    .header .menu {
+      clear: none;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+
+    .header{
+        margin-bottom: 0px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*navbar 
+
 #navbar {
-    padding: 15px 0px;
+    padding: 0px 0px;
     position: fixed;
     max-width: 1000px;
+    width: 100%;
     z-index: 1000;
     transition: all 0.3s;
 }
 
 .nav-content {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
     background-color: #111111;
     border-radius: 0px;
     margin: 0 auto;
@@ -147,14 +311,13 @@ table {
     border-radius: 0px;
 }
 
-/* Hide checkbox */
+
 #nav-toggle {
     display: none;
 }
 
-/* Hamburger menu styles */
 .nav-toggle-label {
-    display: none; /* Hidden by default for desktop */
+    display: none; 
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -162,7 +325,6 @@ table {
     justify-content: center;
 }
 
-/* Container for hamburger lines */
 .hamburger-lines {
     position: relative;
     width: 25px;
@@ -195,7 +357,6 @@ table {
     top: 8px;
 }
 
-/* Hamburger animation */
 #nav-toggle:checked + .nav-toggle-label .hamburger-lines span {
     background: transparent;
 }
@@ -210,7 +371,6 @@ table {
     top: 0;
 }
 
-/* Navigation links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -247,10 +407,9 @@ table {
     transition: all 0.6s;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
     .nav-toggle-label {
-        display: flex; /* Show only on mobile */
+        display: flex; 
     }
 
     .nav-links {
@@ -262,7 +421,6 @@ table {
         padding: 0;
         margin: 0;
         
-        /* Initial state */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease-in-out,
@@ -282,20 +440,17 @@ table {
                     transform 0.5s ease;
     }
 
-    /* Show menu when checkbox is checked */
     #nav-toggle:checked ~ .nav-links {
         max-height: 500px;
         padding: 1rem;
     }
 
-    /* Animate list items when menu opens */
     #nav-toggle:checked ~ .nav-links li {
         opacity: 1;
         transform: translateY(0);
         padding:30px;
     }
 
-    /* Stagger the animation for each list item */
     .nav-links li:nth-child(1) { transition-delay: 0.1s; }
     .nav-links li:nth-child(2) { transition-delay: 0.2s; }
     .nav-links li:nth-child(3) { transition-delay: 0.3s; }
@@ -311,7 +466,7 @@ table {
     }
 }
 
-
+*/
 
 
 
@@ -427,7 +582,7 @@ table {
 }
 
 .work-card .card-content h3{
-    font-size: 24px;
+    font-size: 22px;
     color:  #111111;
 }
 
@@ -437,8 +592,8 @@ table {
 
 .work-card .card-content ul li{
     padding: 4px 15px;
-    margin-right: 10px !important;
-    margin-bottom: 10px !important;
+    margin-right: 6px !important;
+    margin-bottom: 8px !important;
     border: 1px solid #111111;
     border-radius: 30px;
     font-size: 14px;
@@ -453,13 +608,13 @@ table {
     margin-top: 15px;
     padding: 10px 20px;
     color: #111111;
-    border: 2px solid #111111;
+    border: 1px solid #111111;
     border-radius: 0px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 20px;
-    -webkit-box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
-    -moz-box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
-    box-shadow: 0px 10px 0px 0px rgba(17,17,17,1);
+    -webkit-box-shadow: 0px 6px 0px 0px rgba(17,17,17,1);
+    -moz-box-shadow: 0px 6px 0px 0px rgba(17,17,17,1);
+    box-shadow: 0px 6px 0px 0px rgba(17,17,17,1);
     transition: all 0.6s;
 }
 
@@ -538,8 +693,8 @@ table {
 
 .cta-email h3{
     font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 .cta-email a{
