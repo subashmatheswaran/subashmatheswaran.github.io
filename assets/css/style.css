@@ -290,8 +290,15 @@ table {
 .hero-p{
     font-size: 20px;
     line-height: 28px;
-    margin: 20px 0 35px 0;
+    margin: 20px 0 10px 0;
     color: #232323;
+}
+
+.hero-link{
+  font-size: 20px;
+  line-height: 28px;
+  margin: 5px 0 35px 0;
+  color: #232323;
 }
 
 .hero-image{
@@ -371,11 +378,11 @@ table {
 
 .work-card{
     clear: both;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .work-card h3{
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
 .work-card-image{
