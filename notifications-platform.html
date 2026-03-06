@@ -43,10 +43,82 @@ SMILE...    ;-)
         gtag('config', 'G-92M4LGLC63');
     </script>
 
+    <style>
+        /* ── Lightbox ── */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 92vw;
+            max-height: 92vh;
+            object-fit: contain;
+            border: none;
+            display: block;
+            cursor: default;
+            box-shadow: 0 8px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        #lightbox-close {
+            position: fixed;
+            top: 24px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 22px;
+            line-height: 44px;
+            text-align: center;
+            cursor: pointer;
+            color: #111;
+            font-family: 'JetBrains Mono', monospace;
+            z-index: 10000;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        #lightbox-close:hover {
+            background: #262626;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .case-study-page .full-width-image img,
+        .case-study-page .image-grid-item img,
+        .case-study-page .case-study-hero-image img {
+            cursor: zoom-in;
+            transition: opacity 0.2s ease;
+        }
+
+        .case-study-page .full-width-image img:hover,
+        .case-study-page .image-grid-item img:hover,
+        .case-study-page .case-study-hero-image img:hover {
+            opacity: 0.88;
+        }
+    </style>
+
 </head>
 
 
 <body class="case-study-page">
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button id="lightbox-close" aria-label="Close image viewer">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
     <div class="container">
 
         <!-- Header -->
@@ -196,6 +268,43 @@ SMILE...    ;-)
         </footer>
 
     </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            var closeBtn = document.getElementById('lightbox-close');
+
+            var images = document.querySelectorAll(
+                '.case-study-hero-image img, .full-width-image img, .image-grid-item img'
+            );
+
+            images.forEach(function (img) {
+                img.addEventListener('click', function () {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        })();
+    </script>
 
 </body>
 
